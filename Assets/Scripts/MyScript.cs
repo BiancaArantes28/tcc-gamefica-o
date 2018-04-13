@@ -4,16 +4,35 @@ using UnityEngine;
 
 public class MyScript : MonoBehaviour
 {
+    public GameObject lancheSprite;
+    public Sprite ingrediente;
+    public int value;
+    public int[] myInt;
+    public int[] usuario;
+    public Sprite[] ing;
+    public Lanche lanche;
+    //public int[5] usuario;
 
-    // Use this for initialization
-    void Start()
-    {
+    public void TrocarIngrediente() {
+        lancheSprite.GetComponent<SpriteRenderer>().sprite = ingrediente;
+       
+        
+        //lancheSprite.GetComponent<>
+        lancheSprite.SetActive(true);
 
+    
     }
-
-    // Update is called once per frame
-    void Update()
+    public bool CheckIfCorrect(int ingrediente, int ingredienteCorreto)
     {
-
+        if (ingrediente == ingredienteCorreto)
+        {
+            print("Uhuuu");
+            return true;
+        }
+        else
+        {
+            return false;
+            
+        }
     }
 }
