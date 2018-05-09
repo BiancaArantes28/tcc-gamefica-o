@@ -9,6 +9,7 @@ public class Prototipo : MonoBehaviour {
 	public GameObject[] pedidos;
 	public Sprite[] spritepedidos;
 	public Sprite lanche;
+	public AudioSource musica;
 	// int[] arrayingredientes;
 	int[] arrayingredientes = new int[6];
 	static public int i = 0;
@@ -66,6 +67,8 @@ public class Prototipo : MonoBehaviour {
 		if (ingredienteSelecionado == arrayingredientes[i]) {
 			
 			if (i + 1 == 6) {
+				//Instantiate (musica, new Vector3 (-7, 2, 0), Quaternion.identity);
+				musica.Play();
 				placar += 1;
 				txt.text = placar.ToString ();
 				descartaLanche ();
@@ -102,6 +105,7 @@ public class Prototipo : MonoBehaviour {
 
 		}
 		if (erro == 0) {
+			
 			placar += 1;
 			txt.text = placar.ToString ();
 		}
