@@ -10,6 +10,7 @@ public class Prototipo : MonoBehaviour {
 	public Sprite[] spritepedidos;
 	public Sprite lanche;
 	public AudioSource musica;
+	public AudioSource musica_descartalanche;
 	// int[] arrayingredientes;
 	int[] arrayingredientes = new int[6];
 	static public int i = 0;
@@ -41,6 +42,7 @@ public class Prototipo : MonoBehaviour {
 		resposta = checkLanche (usuario [i]);
 		if (resposta == false) {
 			descartaLanche ();
+			musica_descartalanche.Play ();
 			i = 0;
 		} else {
 			// print (i);
@@ -86,6 +88,7 @@ public class Prototipo : MonoBehaviour {
 		for (int c = 0; c < ingredientes.Length; c++) {
 			ingredientes[c].SetActive(false);
 		}
+
 	}
 
 	public void descartaPedido(){
