@@ -40,7 +40,6 @@ public class Prototipo : MonoBehaviour {
 
 		ingredientes[i].SetActive(true);
 
-		//usuario[i] = value;
 		resposta = checkLanche ();
 		if (resposta == false) {
 			descartaLanche ();
@@ -52,17 +51,14 @@ public class Prototipo : MonoBehaviour {
 		}
 	}
 	public void montaPedido(){
-		//arrayingredientes[0] = 1;
 		pedidos[0].GetComponent<SpriteRenderer>().sprite = spritepedidos[0];
 		pedidos[0].SetActive(true);
 		for (int b = 1; b < pedidos.Length - 1; b++) {
 			num = Random.Range(1,5);
-			//arrayingredientes[b] = b + 1;
 			pedidos[b].GetComponent<SpriteRenderer>().sprite = spritepedidos[num];
 			pedidos[b].SetActive(true);
 
 		}
-		//arrayingredientes[5] = 6;
 		pedidos[5].GetComponent<SpriteRenderer>().sprite = spritepedidos[5];
 		pedidos[5].SetActive(true);
 	}
@@ -88,29 +84,6 @@ public class Prototipo : MonoBehaviour {
 		} else {
 			return false;
 		}
-		/*if (ingredienteSelecionado == arrayingredientes[i]) {
-			
-			if (i + 1 == 6) {
-				//Instantiate (musica, new Vector3 (-7, 2, 0), Quaternion.identity);
-				//print("aqui");
-				i = 0;
-				musica.Play();
-				//print ("usuario");
-				//print (usuario [i]);
-				placar += 1;
-				txt.text = placar.ToString ();
-				descartaLanche ();
-				descartaPedido ();
-
-				montaPedido ();
-
-				return true;
-
-			}
-			return true;
-		} else {
-			return false;
-		}*/
 	}
 
 	public void descartaLanche(){
